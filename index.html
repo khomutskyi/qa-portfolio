@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Igor Khomutskyi | Senior QA & Automation Engineer</title>
-    <!-- Футуристичний шрифт з підтримкою кирилиці -->
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+    
     <style>
         :root {
             --bg-dark: #07090f;
@@ -28,7 +27,6 @@
             overflow-x: hidden;
         }
 
-        /* Language Toggle Logic - виправлено конфлікт селекторів */
         body[lang="uk"] .lang-en { display: none !important; }
         body[lang="en"] .lang-uk { display: none !important; }
 
@@ -165,6 +163,62 @@
 
         @keyframes spin { 100% { transform: rotate(360deg); } }
 
+        /* WoT Battle Button */
+        .wot-btn {
+            display: none;
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(to bottom, #ff5100, #9e1b00);
+            color: #fff;
+            border: 2px solid #ff7b00;
+            padding: 10px 40px;
+            font-family: 'Jura', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 81, 0, 0.8), inset 0 0 10px rgba(0,0,0,0.6);
+            border-radius: 4px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+            z-index: 10;
+            transition: all 0.1s;
+        }
+
+        .wot-btn:hover {
+            box-shadow: 0 0 30px rgba(255, 81, 0, 1), inset 0 0 15px rgba(0,0,0,0.8);
+            background: linear-gradient(to bottom, #ff6a00, #a81d00);
+        }
+
+        .wot-btn:active {
+            transform: translateX(-50%) scale(0.95);
+            background: linear-gradient(to bottom, #9e1b00, #ff5100);
+        }
+
+        /* Easter Egg Trigger */
+        .easter-egg-btn {
+            position: fixed;
+            bottom: 15px;
+            right: 15px;
+            background: transparent;
+            color: var(--text-muted);
+            border: 1px dashed rgba(138, 155, 177, 0.3);
+            padding: 5px 10px;
+            font-family: 'Jura', sans-serif;
+            font-size: 0.8rem;
+            cursor: pointer;
+            z-index: 1000;
+            opacity: 0.3;
+            transition: all 0.3s;
+        }
+
+        .easter-egg-btn:hover {
+            opacity: 1;
+            color: var(--neon-magenta);
+            border-color: var(--neon-magenta);
+        }
+
         .subtitle {
             font-size: 1.5rem;
             color: var(--neon-magenta);
@@ -287,19 +341,19 @@
         <div class="nav-links">
             <a href="#about" class="lang-en">About</a>
             <a href="#about" class="lang-uk">Про мене</a>
-
+            
             <a href="#experience" class="lang-en">Experience</a>
             <a href="#experience" class="lang-uk">Досвід</a>
-
+            
             <a href="#skills" class="lang-en">Skills</a>
             <a href="#skills" class="lang-uk">Навички</a>
-
+            
             <a href="#documentation" class="lang-en">Documentation</a>
             <a href="#documentation" class="lang-uk">Документація</a>
-
+            
             <a href="#contact" class="lang-en">Contact</a>
             <a href="#contact" class="lang-uk">Контакти</a>
-
+            
             <button id="lang-switch" class="lang-btn">UK</button>
         </div>
     </nav>
@@ -307,12 +361,17 @@
     <section id="home">
         <div class="profile-container">
             <img src="photo.jpg" alt="Igor Khomutskyi" class="profile-img">
+            <!-- Кнопка В бій (прихована за замовчуванням) -->
+            <button id="wot-battle-btn" class="wot-btn">
+                <span class="lang-en">Battle!</span>
+                <span class="lang-uk">В бій!</span>
+            </button>
         </div>
         <h1><span class="highlight">Igor</span> Khomutskyi</h1>
-
+        
         <div class="subtitle lang-en">Senior QA & Automation Engineer</div>
         <div class="subtitle lang-uk">Senior QA & Automation Engineer</div>
-
+        
         <a href="#contact" class="contact-btn lang-en">Initialize Contact</a>
         <a href="#contact" class="contact-btn lang-uk">Ініціювати контакт</a>
     </section>
@@ -320,7 +379,7 @@
     <section id="about">
         <h2 class="lang-en">About <span class="highlight">Me</span></h2>
         <h2 class="lang-uk">Про <span class="highlight">Мене</span></h2>
-
+        
         <div class="about-text lang-en">
             I’m a dedicated Senior Quality Assurance Engineer with over 9 years of hands-on experience in the AAA gaming industry. I specialize in building robust QA pipelines, creating automated test scripts with Python/Pytest, executing deep API validation, and testing complex logic in Unreal Engine. Currently expanding my expertise into Frontend Development and Web Automation (JavaScript, Playwright, HTML/CSS). I build responsive, functional web applications from scratch, configuring modern dev environments (VS Code, ESLint, Git workflows). Fluent in English and Ukrainian, driving strict empirical truth and high-quality software delivery without compromise.
         </div>
@@ -351,7 +410,7 @@
                 <li>Перенесення глибокого досвіду тестування в автоматизовані фреймворки на базі Playwright.</li>
             </ul>
         </div>
-
+        
         <div class="cyber-card">
             <h3 class="lang-en">Gameplay Analyst</h3>
             <h3 class="lang-uk">Gameplay Analyst</h3>
@@ -386,7 +445,7 @@
                 <li>Налаштування QA процесів з нуля (Jenkins, тест-кейси) для неанонсованих проєктів на Unreal Engine. Релізи та смоук-тести World of Warplanes.</li>
             </ul>
         </div>
-
+        
         <div class="cyber-card">
             <h3 class="lang-en">MIS Specialist</h3>
             <h3 class="lang-uk">MIS Specialist</h3>
@@ -438,14 +497,18 @@
     <section id="contact" style="min-height: 50vh; text-align: center;">
         <h2 class="lang-en">Establish <span class="highlight">Connection</span></h2>
         <h2 class="lang-uk">Ініціювати <span class="highlight">Зв'язок</span></h2>
-
+        
         <p class="lang-en" style="font-size: 1.2rem; margin-bottom: 30px;">Ready to build scalable logic and optimize QA processes.</p>
         <p class="lang-uk" style="font-size: 1.2rem; margin-bottom: 30px;">Готовий до побудови масштабованої логіки та оптимізації QA процесів.</p>
-
+        
         <a href="https://linkedin.com/in/khomutskyi" target="_blank" class="contact-btn">LinkedIn Network</a>
         <br><br>
         <a href="mailto:khomutskyi@gmail.com" style="color: var(--text-muted); text-decoration: none; font-size: 1.2rem;">khomutskyi@gmail.com</a>
     </section>
+
+    <!-- Кнопка активації пасхалки та аудіофайл -->
+    <button id="easter-egg-trigger" class="easter-egg-btn">Easter Egg</button>
+    <audio id="wot-audio" src="battle.wav" preload="auto"></audio>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
@@ -460,6 +523,26 @@
                 body.setAttribute('lang', 'en');
                 btn.textContent = 'UK';
             }
+        });
+
+        // Easter Egg Logic
+        const easterEggTrigger = document.getElementById('easter-egg-trigger');
+        const wotBattleBtn = document.getElementById('wot-battle-btn');
+        const wotAudio = document.getElementById('wot-audio');
+
+        // Показати/сховати кнопку при натисканні на Easter Egg
+        easterEggTrigger.addEventListener('click', () => {
+            if (wotBattleBtn.style.display === 'block') {
+                wotBattleBtn.style.display = 'none';
+            } else {
+                wotBattleBtn.style.display = 'block';
+            }
+        });
+
+        // Програти звук при натисканні на В бій
+        wotBattleBtn.addEventListener('click', () => {
+            wotAudio.currentTime = 0; // Скидає звук на початок, якщо натиснути двічі
+            wotAudio.play();
         });
 
         particlesJS('particles-js', {
